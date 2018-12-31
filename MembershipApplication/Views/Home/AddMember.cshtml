@@ -1,0 +1,73 @@
+﻿@model MembershipApplication.Models.User
+<br />
+
+
+
+<div class="container">
+    @if (TempData["NewMemberAdded"] != null)
+    {
+       <h4 style="color:lightseagreen">@TempData["NewMemberAdded"]</h4>
+    }
+    <br />
+    <h4>New Member</h4>
+    @using (Html.BeginForm())
+    {
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" });
+        <div>
+            <div class="form-group row">
+                @Html.LabelFor(u => u.Name, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(u => u.Name, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(u => u.Name, null, new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group row">
+                @Html.LabelFor(u => u.Age, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(u => u.Age, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(u => u.Age, null, new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group row">
+                @Html.LabelFor(u => u.Gender, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.RadioButtonFor(u => u.Gender, "Male") Male
+                    @Html.RadioButtonFor(u => u.Gender, "Female") Female
+                </div>
+                @Html.ValidationMessageFor(u => u.Gender, null, new { @class = "text-danger" })
+            </div>
+            <div class="form-group row">
+                @Html.LabelFor(u => u.PhoneNumber, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(u => u.PhoneNumber, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(u => u.PhoneNumber, null, new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group row">
+                @Html.LabelFor(m => m.Address, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextAreaFor(m => m.Address, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Address, null, new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group row">
+                @Html.LabelFor(u => u.Email, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(u => u.Email, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(u => u.Email, null, new { @class = "text-danger" })
+                    <br />
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-md-offset-5 col-md-10">
+                    <input type="submit" class="btn btn-default" value="Join Us" />
+                </div>
+            </div>
+            <br /><br /><hr />
+        </div>
+    }
+</div>
+
+
+
