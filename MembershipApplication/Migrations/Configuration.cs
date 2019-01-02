@@ -28,7 +28,7 @@ namespace MembershipApplication.Migrations
                         Age = "26",
                         Gender = "Male",
                         PhoneNumber = "8447745452",
-                        Address = "Pankha Road Uttam Nagar",
+                        Address = "A-113, Pankha Road, Uttam Nagar,New Delhi 110059, Opp to uttam nagar east metro station and pillar, no-644",
                         Email ="deepakgomic@gmail.com",
                         Password = "police@10000",
                         IsAdmin = true,
